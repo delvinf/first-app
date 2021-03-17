@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import tasks from './sample/task.json';
+import TasksList from './sample/task.json';
 
 import Tasks from './components/Tasks.js';
 
@@ -10,7 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      tasks: tasks,
+      tasks: TasksList,
      };
   }
   render() {

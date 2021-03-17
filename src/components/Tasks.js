@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Task from './Task';
+import Task from './Task.js';
 
 class Tasks extends Component {
 
