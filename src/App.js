@@ -1,9 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import tasks from './sample/task.json';
+
+import Tasks from './components/Tasks.js';
+
+
+ 
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      tasks: tasks,
+     };
+  }
+  render() {
+    return (
+      <div>
+        <ToDoList />
+
+
+           <Tasks tasks={this.state.tasks} />
+
+        
+
+
+      </div>
+    );
+  }
+}
 
 
 
-class App extends React.Component {
+class ToDoList extends Component {
   constructor(props){super(props);
     this.state = {
       userInput: " ",
@@ -50,12 +78,12 @@ class App extends React.Component {
 }
 
 
-class Hola extends React.Component {
-constructor(props){super(props);
+class Hola extends Component {
+constructor(props){
+  super(props);
 
   this.state = {
     show: true,
-  
   };
   
   this.toggleShow = this.toggleShow.bind(this);
@@ -80,6 +108,12 @@ toggleShow () {
 }
  
 }
+
+
+// SE ACABÓ (OTRA APP) 
+
+
+
 
 
 
