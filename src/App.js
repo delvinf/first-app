@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import TasksList from './sample/task.json';
 
-import Tasks from './components/Tasks.js';
+//Componentes
 
+import Tasks from './components/Tasks.js';
+import TaskForm from './components/TaskForm.js';
 
  
 class App extends Component {
@@ -13,13 +15,52 @@ class App extends Component {
       tasks: TasksList,
      };
   }
+
+  addTask = (title, description) => {
+    const newTask = {
+      id: this.state.tasks.length,
+      title: title,
+      description: description,
+      
+    }
+    this.setState({
+      tasks: [...this.state.tasks, (newTask)]
+    })
+
+  }
+
+
+  deleteTask = (id) => {
+    const newTasks = this.state.tasks.filter(task => task.id !== id)
+    this.setState({
+      tasks: newTasks
+    })
+
+  }
+
+  checkDone = id => {
+    const newTask = this.state.tasks.map(task => {
+      if(task.id === id){
+        task.done = !task.done
+      }
+      return task
+    })
+    this.setState({tasks: newTask
+
+    })
+  }
+
+
   render() {
     return (
       <div>
         <ToDoList />
 
 
-           <Tasks tasks={this.state.tasks} />
+        <h1>_______________</h1>
+        <h1>Otra App</h1>
+        <TaskForm addTask={this.addTask} />
+        <Tasks tasks={this.state.tasks} deleteTask={this.deleteTask} checkDone={this.checkDone} />
 
         
 
