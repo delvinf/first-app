@@ -1,0 +1,10 @@
+.btnDelete {
+    font-size:18px;
+    color: white;
+    background-color: red;
+    border-radius: 20%;
+    padding: 10px 15px;
+    border:none;
+
+    cursor: pointer
+}

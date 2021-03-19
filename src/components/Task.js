@@ -21,12 +21,12 @@ class Task extends Component {
  
         return (
             <div style={this.StyleCompleted()} >
-            {this.props.task.title} - 
             {this.props.task.id} - 
-            {this.props.task.description} - 
+            {this.props.task.title} - 
+            {this.props.task.description}
             {this.props.task.done}
             <input type="checkbox" onChange={this.props.checkDone.bind(this, this.props.task.id)} />
-            <button style={btnDelete} onClick={this.props.deleteTask.bind(this, this.props.task.id)} >
+            <button className="btnDelete"  onClick={this.props.deleteTask.bind(this, this.props.task.id)} >
                 x
             </button>
 
@@ -39,17 +39,6 @@ class Task extends Component {
 
 Task.propTypes = {
     task: PropTypes.object.isRequired,
-}
-
-const btnDelete = {
-    fontSize: '18px',
-    color: 'white',
-    backgroundColor: 'red',
-    borderRadius: '50%',
-    padding: '10px 15px',
-    border:'none',
-
-    cursor: 'pointer'
 }
 
 export default Task;

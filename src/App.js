@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import TasksList from './sample/task.json';
 
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
 //Componentes
 
 import Tasks from './components/Tasks.js';
 import TaskForm from './components/TaskForm.js';
+import Posts from './components/Posts.js';
 
  
 class App extends Component {
@@ -52,16 +55,36 @@ class App extends Component {
 
 
   render() {
-    return (
-      <div>
-        <ToDoList />
+    return (     <div>
 
+<Router>
+  <Link to="/" >Home</Link>
+  <br />
+  <Link to="/posts" >Posts</Link>
 
-        <h1>_______________</h1>
-        <h1>Otra App</h1>
-        <TaskForm addTask={this.addTask} />
-        <Tasks tasks={this.state.tasks} deleteTask={this.deleteTask} checkDone={this.checkDone} />
+<Route exact path="/" render={() => {
+return(
+<div>
+<ToDoList />
 
+<h1>_______________</h1>
+<h1>Otra App</h1>
+<TaskForm addTask={this.addTask} />
+<Tasks tasks={this.state.tasks}
+deleteTask={this.deleteTask}
+checkDone={this.checkDone} />
+
+</div>)
+}
+} >
+
+</Route>
+
+<Route path="/posts" component={Posts} />
+
+</Router>
+
+ 
         
 
 
