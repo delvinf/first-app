@@ -31,8 +31,9 @@ class TaskForm extends Component {
         
         return (
             
-            <form onSubmit={this.onSubmit} >
+            <form id="task-form" onSubmit={this.onSubmit} >
                 <input 
+                className="text-input"
                 name= "title"
                 type="text" 
                 placeholder="Escribe tu tarea" 
@@ -40,6 +41,7 @@ class TaskForm extends Component {
                 value={this.state.title} />
                 <br />
                 <textarea 
+                className="text-input"
                 name= "description"
                 placeholder="escribe la descripción" 
                 onChange={this.onChange} 

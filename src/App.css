@@ -2,5 +2,77 @@
 
 * {
     font-family: 'Inter', sans-serif;
+    
 }
 
+
+.contenido {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 33%;
+    align-items: center;
+    background-color: yellow;
+
+    
+
+    
+}
+
+#nav-bar {
+    display: flex;
+    background-image: linear-gradient(to right, #810034,  #26001b);
+    width: 100%;
+    justify-content: flex-end;
+    height: 50px;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    padding: .5em;
+    box-sizing: border-box;
+
+}
+
+.nav-link {
+    margin-left: .5em;
+    margin-right: .5em;
+    height: 50px;
+    padding: 0em .5em;
+
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff600;
+
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:hover {
+    background-color:  #ff005c;
+    color: white;
+}
+
+
+#task-form {
+    background-color: red;
+    display: flex;
+    flex-flow: column;
+    width: 50%;
+}
+
+.text-input {
+    box-sizing: border-box;
+    width: 100%;
+
+}
+
+textarea {
+    resize: vertical;
+    
+}
+
+
+#div-post {
+    padding: 0% 5%;
+}

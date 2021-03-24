@@ -55,16 +55,18 @@ class App extends Component {
 
 
   render() {
-    return (     <div>
+    return (     <div id="container" >
 
 <Router>
-  <Link to="/" >Home</Link>
+  <div id="nav-bar">
+  <Link to="/" className="nav-link" >Home</Link>
   <br />
-  <Link to="/posts" >Posts</Link>
+  <Link to="/posts" className="nav-link" >Posts</Link>
+  </div>
 
 <Route exact path="/" render={() => {
 return(
-<div>
+<div className="contenido">
 <ToDoList />
 
 <h1>_______________</h1>
@@ -80,7 +82,15 @@ checkDone={this.checkDone} />
 
 </Route>
 
-<Route path="/posts" component={Posts} />
+<Route path="/posts" render={() => {
+
+  return(
+    <div className="contenido">
+       <Posts />
+    </div>
+   
+  )
+}} />
 
 </Router>
 

@@ -12,7 +12,7 @@ class Posts extends Component {
 
     render() {
         return (
-            <div>
+            <div id="div-post" >
                 <h1>Posts</h1>
                 {
                     this.state.posts.map(post => {
